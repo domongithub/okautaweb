@@ -123,13 +123,38 @@ if (fleetGrid) {
 
 const header = document.querySelector("[data-header]");
 const mobileCta = document.querySelector(".mobile-cta");
+let isHeaderScrolled = false;
+let isMobileCtaVisible = false;
+let scrollTicking = false;
+
 const setHeaderState = () => {
-  header?.classList.toggle("is-scrolled", window.scrollY > 24);
-  mobileCta?.classList.toggle("is-visible", window.scrollY > 260);
+  const scrollY = window.scrollY;
+  const nextHeaderState = scrollY > 24;
+  const nextMobileCtaState = scrollY > 260;
+
+  if (nextHeaderState !== isHeaderScrolled) {
+    header?.classList.toggle("is-scrolled", nextHeaderState);
+    isHeaderScrolled = nextHeaderState;
+  }
+
+  if (nextMobileCtaState !== isMobileCtaVisible) {
+    mobileCta?.classList.toggle("is-visible", nextMobileCtaState);
+    isMobileCtaVisible = nextMobileCtaState;
+  }
 };
 
-setHeaderState();
-window.addEventListener("scroll", setHeaderState, { passive: true });
+const requestHeaderState = () => {
+  if (scrollTicking) return;
+
+  scrollTicking = true;
+  window.requestAnimationFrame(() => {
+    setHeaderState();
+    scrollTicking = false;
+  });
+};
+
+requestHeaderState();
+window.addEventListener("scroll", requestHeaderState, { passive: true });
 
 const revealTargets = document.querySelectorAll(
   ".section-heading, .reservation-actions, .benefit-card, .fleet-card, .steps article, .rules-grid article, .reviews-grid figure, .reviews-actions, .faq-list details, .contact-card, .parking-photo, .map-wrap"
