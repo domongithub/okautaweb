@@ -20,8 +20,8 @@
     <meta name="geo.position" content="50.50301;13.63617" />
     <meta name="ICBM" content="50.50301, 13.63617" />
     <link rel="canonical" href="https://www.okauta.eu/" />
-    <link rel="icon" href="assets/logo-ok.png" />
-    <link rel="apple-touch-icon" href="assets/logo-ok.png" />
+    <link rel="icon" href="assets/logo-ok-192.png" />
+    <link rel="apple-touch-icon" href="assets/logo-ok-192.png" />
     <link rel="manifest" href="site.webmanifest" />
 
     <meta property="og:type" content="website" />
@@ -43,9 +43,10 @@
     />
     <meta name="twitter:image" content="https://www.okauta.eu/assets/hero-fleet.jpg" />
 
-    <link rel="preload" href="assets/hero-fleet.jpg" as="image" />
+    <link rel="preload" href="assets/hero-fleet.jpg" as="image" fetchpriority="high" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="styles.css" /></noscript>
 
     <script type="application/ld+json">
       {
@@ -55,7 +56,7 @@
         "name": "OKAUTA",
         "url": "https://www.okauta.eu/",
         "image": "https://www.okauta.eu/assets/hero-fleet.jpg",
-        "logo": "https://www.okauta.eu/assets/logo-okauta.png",
+        "logo": "https://www.okauta.eu/assets/logo-ok-512.png",
         "telephone": "+420602880022",
         "email": "pujcovna@okauta.eu",
         "priceRange": "900 Kč - 18000 Kč",
@@ -327,7 +328,7 @@
 
     <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="OKAUTA autopůjčovna Most">
-        <img src="assets/logo-ok.png" width="52" height="52" alt="" />
+        <img src="assets/logo-ok-96.png" width="52" height="52" alt="" />
         <span>OKAUTA</span>
       </a>
       <nav class="nav" aria-label="Hlavní navigace">
@@ -593,7 +594,7 @@
           </div>
           <div class="location-media">
             <figure class="parking-photo">
-              <img src="assets/parkoviste-optimized.jpg" alt="Výdejní místo a parkoviště autopůjčovny OKAUTA v Mostě, Báňská 845" loading="lazy" decoding="async" width="2048" height="1152" />
+              <img src="assets/parkoviste-optimized.jpg" alt="Výdejní místo a parkoviště autopůjčovny OKAUTA v Mostě, Báňská 845" loading="lazy" decoding="async" width="1200" height="900" />
               <figcaption>Výdejní místo na parkovišti, Báňská 845, Most</figcaption>
             </figure>
             <div class="map-wrap" aria-label="Mapa výdejního místa OKAUTA">
@@ -612,7 +613,7 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <div class="footer-brand" aria-label="OKAUTA">
-          <img src="assets/logo-ok.png" alt="" />
+          <img src="assets/logo-ok-96.png" width="42" height="42" alt="" />
           <span>OKAUTA</span>
         </div>
         <p>Autopůjčovna Most · půjčení auta Most · půjčovna dodávek Most</p>

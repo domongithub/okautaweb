@@ -8,7 +8,7 @@
   "theme_color": "#a8d400",
   "icons": [
     {
-      "src": "assets/logo-ok.png",
+      "src": "assets/logo-ok-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
