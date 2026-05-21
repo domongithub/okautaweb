@@ -1,0 +1,17 @@
+{
+  "name": "OKAUTA - autopůjčovna Most",
+  "short_name": "OKAUTA",
+  "description": "Lokální autopůjčovna v Mostě pro půjčení osobních aut a dodávek.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#101214",
+  "theme_color": "#a8d400",
+  "icons": [
+    {
+      "src": "assets/logo-ok.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
